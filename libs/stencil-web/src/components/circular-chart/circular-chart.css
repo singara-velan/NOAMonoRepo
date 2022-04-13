@@ -53,9 +53,17 @@
   margin-left: auto;
 }
 
+.ws-pre {
+  white-space: pre;
+}
+
 @media (max-width: 576px) {
   .container {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .legend-container  {
+    margin-left: 0px;
   }
 }

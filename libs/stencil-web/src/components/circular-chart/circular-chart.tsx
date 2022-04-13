@@ -110,7 +110,7 @@ export class CircularChart {
             <div class="legend-row">
               <span class="lengend-identifier" style={{ 'backgroundColor': this.getColor(d.code) }} ></span>
               <span>{d.label}</span>
-              <span class="ml-auto">{this.getPercentage(d.value)}% | {d.value}</span>
+              <span class="ml-auto ws-pre">{this.getPercentage(d.value)}% | {d.value}</span>
             </div>
           ))}
         </div>
