@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CircularChart } from '../generated/directives/proxies';
+import { CircularChart, CircularPieChart, LineChart } from '../generated/directives/proxies';
 
 const WebComponents = [
-  CircularChart
+  CircularChart,
+  CircularPieChart,
+  LineChart
 ]
 
 @NgModule({

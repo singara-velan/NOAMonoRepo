@@ -1,14 +1,8 @@
 :host {
   font-family: Aktiv Grotesk, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
   display: block;
-  font-size: 14px;
-}
-
-.card {
-  background-color: white;
-  border: 1px solid #b5c7ca;
-  border-radius: 10px;
-  padding: 25px;
+  color: #46535e;
+  padding: 10px;
 }
 
 .chart-middle-text {
@@ -55,17 +49,8 @@
   margin-right: 5px;
 }
 
-h1 {
-  margin: 0;
-  padding: 0;
-}
-
 .ml-auto {
   margin-left: auto;
-}
-
-.mb-1-5 {
-  margin-bottom: 1.5rem;
 }
 
 .ws-pre {

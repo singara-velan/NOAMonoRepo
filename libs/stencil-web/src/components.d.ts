@@ -8,9 +8,21 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CircularChart {
         "data": string;
+        "header": string;
         "height": number;
         "label": string;
         "type": string;
+        "width": number;
+    }
+    interface CircularPieChart {
+        "data": string;
+        "height": number;
+        "valueType": string;
+        "width": number;
+    }
+    interface LineChart {
+        "data": string;
+        "height": number;
         "width": number;
     }
 }
@@ -21,20 +33,48 @@ declare global {
         prototype: HTMLCircularChartElement;
         new (): HTMLCircularChartElement;
     };
+    interface HTMLCircularPieChartElement extends Components.CircularPieChart, HTMLStencilElement {
+    }
+    var HTMLCircularPieChartElement: {
+        prototype: HTMLCircularPieChartElement;
+        new (): HTMLCircularPieChartElement;
+    };
+    interface HTMLLineChartElement extends Components.LineChart, HTMLStencilElement {
+    }
+    var HTMLLineChartElement: {
+        prototype: HTMLLineChartElement;
+        new (): HTMLLineChartElement;
+    };
     interface HTMLElementTagNameMap {
         "circular-chart": HTMLCircularChartElement;
+        "circular-pie-chart": HTMLCircularPieChartElement;
+        "line-chart": HTMLLineChartElement;
     }
 }
 declare namespace LocalJSX {
     interface CircularChart {
         "data"?: string;
+        "header"?: string;
         "height"?: number;
         "label"?: string;
         "type"?: string;
         "width"?: number;
     }
+    interface CircularPieChart {
+        "data"?: string;
+        "height"?: number;
+        "valueType"?: string;
+        "width"?: number;
+    }
+    interface LineChart {
+        "data"?: string;
+        "height"?: number;
+        "width"?: number;
+    }
     interface IntrinsicElements {
         "circular-chart": CircularChart;
+        "circular-pie-chart": CircularPieChart;
+        "line-chart": LineChart;
     }
 }
 export { LocalJSX as JSX };
@@ -42,6 +82,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "circular-chart": LocalJSX.CircularChart & JSXBase.HTMLAttributes<HTMLCircularChartElement>;
+            "circular-pie-chart": LocalJSX.CircularPieChart & JSXBase.HTMLAttributes<HTMLCircularPieChartElement>;
+            "line-chart": LocalJSX.LineChart & JSXBase.HTMLAttributes<HTMLLineChartElement>;
         }
     }
 }

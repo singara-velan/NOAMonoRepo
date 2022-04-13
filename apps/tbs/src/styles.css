@@ -39,6 +39,10 @@ h1, h2 {
     margin-bottom: 1.5rem;
 }
 
+.fg-1 {
+    flex-grow: 1;
+}
+
 @media (max-width: 576px) {
     .flex-md-wrap {
       flex-wrap: wrap;

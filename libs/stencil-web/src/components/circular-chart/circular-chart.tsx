@@ -14,6 +14,7 @@ export class CircularChart {
   @Prop() label: string;
   @Prop() data: string = "[]";
   @Prop() type: string;
+  @Prop() header: string;
 
   public chartData: any[];
   public total: number;
@@ -40,7 +41,7 @@ export class CircularChart {
     let arcShape = arc().innerRadius(radius * 0.8).outerRadius(radius - 1);
 
     let pieDataStructure = pie().sort(null).value(d => d.value)(this.chartData);
-    
+
     var group = svg.append("g")
       .attr("transform", `translate(${this.width / 2}, ${this.height / 2})`)
       .attr("stroke", "white");
@@ -62,8 +63,8 @@ export class CircularChart {
       .text(this.label);
   }
 
-  getColor(code: string) :string {
-    if(this.type === 'BENCHMARK') {
+  getColor(code: string): string {
+    if (this.type === 'BENCHMARK') {
       return this.getBenchMarkColor(code);
     }
     else {
@@ -71,7 +72,7 @@ export class CircularChart {
     }
   }
 
-  getBenchMarkColor(code: string) : string {
+  getBenchMarkColor(code: string): string {
     let color: string;
     switch (code) {
       case 'SAME':
@@ -86,7 +87,7 @@ export class CircularChart {
       case 'BELOW':
         color = 'red';
         break;
-      default: 
+      default:
         color = '#acc0c4';
         break;
     }
@@ -94,27 +95,30 @@ export class CircularChart {
   }
 
   getPercentage(value: number) {
-    return (value*100/this.total).toFixed(0);
+    return (value * 100 / this.total).toFixed(0);
   }
 
   render() {
     return (
-      <div class="container">
-        <div><svg class="chart" /></div>
-        <div class="legend-container">
-          <div class="legend-row header">
-            <span>Total {this.label}</span>
-            <span class="ml-auto">{this.total}</span>
-          </div>
-          {this.chartData.map(d => (
-            <div class="legend-row">
-              <span class="lengend-identifier" style={{ 'backgroundColor': this.getColor(d.code) }} ></span>
-              <span>{d.label}</span>
-              <span class="ml-auto ws-pre">{this.getPercentage(d.value)}% | {d.value}</span>
+      <article class="card">
+        <h1 class="mb-1-5">{this.header}</h1>
+        <div class="container">
+          <div><svg class="chart" /></div>
+          <div class="legend-container">
+            <div class="legend-row header">
+              <span>Total {this.label}</span>
+              <span class="ml-auto">{this.total}</span>
             </div>
-          ))}
+            {this.chartData.map(d => (
+              <div class="legend-row">
+                <span class="lengend-identifier" style={{ 'backgroundColor': this.getColor(d.code) }} ></span>
+                <span>{d.label}</span>
+                <span class="ml-auto ws-pre">{this.getPercentage(d.value)}% | {d.value}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </article>
     );
   }
 }
