@@ -1,0 +1,61 @@
+:host {
+  font-family: Aktiv Grotesk, -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+  display: block;
+  color: #46535e;
+  padding: 10px;
+}
+
+.chart-middle-text {
+  font-size: 2rem;
+  fill: black;
+  stroke: none;
+  text-anchor: middle;
+}
+
+.chart-middle-text.secondary {
+  font-size: 1rem;
+  fill: gray;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.legend-container {
+  margin-left: 20px;
+  width: 100%;
+}
+
+.legend-row {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+}
+
+.legend-row.header {
+  font-weight: bold;
+  color: #46535e;
+  margin-bottom: 10px
+}
+
+.lengend-identifier {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  margin-top: 2px;
+  margin-right: 5px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+@media (max-width: 576px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

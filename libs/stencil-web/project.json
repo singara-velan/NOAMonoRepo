@@ -1,0 +1,66 @@
+{
+  "root": "libs/stencil-web",
+  "sourceRoot": "libs/stencil-web/src",
+  "projectType": "library",
+  "generators": {
+    "@nxext/stencil:component": {
+      "style": "css"
+    }
+  },
+  "tags": [],
+  "targets": {
+    "test": {
+      "executor": "@nxext/stencil:test",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/stencil-web/tsconfig.lib.json",
+        "configPath": "libs/stencil-web/stencil.config.ts",
+        "outputPath": "dist/libs/stencil-web"
+      }
+    },
+    "build": {
+      "executor": "@nxext/stencil:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/stencil-web/tsconfig.lib.json",
+        "configPath": "libs/stencil-web/stencil.config.ts",
+        "outputPath": "dist/libs/stencil-web"
+      },
+      "configurations": {
+        "production": {
+          "dev": false,
+          "prod": true
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nxext/stencil:serve",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/stencil-web/tsconfig.lib.json",
+        "configPath": "libs/stencil-web/stencil.config.ts",
+        "outputPath": "dist/libs/stencil-web"
+      }
+    },
+    "e2e": {
+      "executor": "@nxext/stencil:e2e",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "projectType": "library",
+        "tsConfig": "libs/stencil-web/tsconfig.lib.json",
+        "configPath": "libs/stencil-web/stencil.config.ts",
+        "outputPath": "dist/libs/stencil-web"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": "libs/stencil-web/**/*.{ts,tsx}"
+      }
+    }
+  }
+}

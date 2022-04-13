@@ -1,0 +1,87 @@
+{
+  "projectType": "application",
+  "root": "apps/tbs",
+  "sourceRoot": "apps/tbs/src",
+  "prefix": "noa",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/tbs",
+        "index": "apps/tbs/src/index.html",
+        "main": "apps/tbs/src/main.ts",
+        "polyfills": "apps/tbs/src/polyfills.ts",
+        "tsConfig": "apps/tbs/tsconfig.app.json",
+        "assets": ["apps/tbs/src/favicon.ico", "apps/tbs/src/assets"],
+        "styles": ["apps/tbs/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/tbs/src/environments/environment.ts",
+              "with": "apps/tbs/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "tbs:build:production"
+        },
+        "development": {
+          "browserTarget": "tbs:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "tbs:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/tbs/src/**/*.ts", "apps/tbs/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/tbs"],
+      "options": {
+        "jestConfig": "apps/tbs/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

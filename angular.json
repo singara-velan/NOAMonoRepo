@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "stencil-web": "libs/stencil-web",
+    "stencil-web-angular": "libs/stencil-web-angular",
+    "tbs": "apps/tbs",
+    "tbs-e2e": "apps/tbs-e2e"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/stencil-web-angular",
+  "sourceRoot": "libs/stencil-web-angular/src",
+  "prefix": "noa",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/stencil-web-angular"],
+      "options": {
+        "jestConfig": "libs/stencil-web-angular/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/stencil-web-angular/src/**/*.ts",
+          "libs/stencil-web-angular/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
