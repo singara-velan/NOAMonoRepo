@@ -1,3 +1,25 @@
 :host {
   display: block;
 }
+
+.domain {
+  stroke: #cddbde;
+  fill: none;
+}
+
+.tick line:first-child {
+  visibility: hidden;
+}
+
+.gridline{
+  stroke: #cddbde;
+  shape-rendering: crispEdges;
+  }
+
+  .axis-label {
+    fill: black;
+    stroke: none;
+    text-anchor: middle;
+    stroke: black;
+    stroke-width: 0.5;
+  }

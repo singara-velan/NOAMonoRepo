@@ -1,7 +1,7 @@
 <article class="container">
     <div class="d-flex flex-wrap">
-        <circular-chart class="mr-lg-1-5 mb-1-5 fg-1" [data]="productProportion" label="Products" type="BENCHMARK" header="Product Proportion by Position"></circular-chart>
-        <circular-chart class="mb-1-5 fg-1" [data]="attributeProportion" label="Attributes" type="BENCHMARK" header="Attribute Proportion by Position"></circular-chart>
+        <circular-chart class="mr-lg-1-5 mb-1-5 flex-lg-1" [data]="productProportion" label="Products" type="BENCHMARK" header="Product Proportion by Position"></circular-chart>
+        <circular-chart class="mb-1-5 flex-lg-1" [data]="attributeProportion" label="Attributes" type="BENCHMARK" header="Attribute Proportion by Position"></circular-chart>
         <!-- <div class="card mr-lg-1-5 mb-1-5">
             <h1 class="mb-1-5">Product Proportion by Position</h1>
             <circular-chart [data]="productProportion" label="Products" type="BENCHMARK"></circular-chart>
@@ -11,15 +11,15 @@
             <circular-chart [data]="attributeProportion" label="Attributes" type="BENCHMARK"></circular-chart>
         </div> -->
     </div>
-    <!-- <div class="d-flex flex-wrap">
-        <div class="card mr-lg-1-5 mb-1-5">
+    <div class="d-flex flex-wrap align-items-start">
+        <div class="card flex-lg-1 mr-lg-1-5 mb-1-5">
             <h1 class="mb-1-5">Amount of Benefit</h1>
             <circular-pie-chart [data]="benfitProportion" valueType="%"></circular-pie-chart>
         </div>
-        <div class="card mr-lg-1-5 mb-1-5">
+        <div class="card flex-lg-1 mb-1-5">
             <h1 class="mb-1-5">Attribute Trends</h1>
             <line-chart [data]="attributeTrends"></line-chart>
         </div>
-    </div> -->
+    </div>
   
 </article>
